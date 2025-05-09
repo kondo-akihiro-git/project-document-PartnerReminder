@@ -1,0 +1,20 @@
+PartnerReminder/
+┣ backend/
+┃ ┣ app/
+┃ ┃ ┣ api/
+┃ ┃ ┣ crud/
+┃ ┃ ┣ db/
+┃ ┃ ┣ entrypoint/
+┃ ┃ ┣ models/
+┃ ┃ ┗ schemas/
+┃ ┣ tests/
+┃ ┗ main.py
+┣ frontend/
+┃ ┣ public/
+┃ ┣ src/
+┃ ┣ package.json
+┃ ┣ tsconfig.json
+┃ ┗ vite.config.ts（またはwebpack.config.js等）
+┣ .gitignore
+┣ README.md
+┗ requirements.txt
