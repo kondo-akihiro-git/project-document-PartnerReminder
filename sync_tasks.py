@@ -18,7 +18,7 @@ headers = {
 }
 
 # タスクファイルを読み込む
-with open('tasks.md', 'r') as file:
+with open('task.md', 'r') as file:
     tasks = file.readlines()
 
 # 既存のIssueを取得
