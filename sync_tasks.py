@@ -23,6 +23,9 @@ with open('task.md', 'r') as file:
 
 # 既存のIssueを取得
 response = requests.get(API_URL, headers=headers)
+# デバッグ出力
+print("Status Code:", response.status_code)
+print("Response Text:", response.text)
 issues = response.json()
 
 existing_issues = [issue['title'] for issue in issues]
