@@ -17,10 +17,11 @@ from dotenv import load_dotenv
 # # GitHubトークン
 # GITHUB_TOKEN = os.getenv('API_TOKEN')
 
-API_URL = os.environ.get("DOCUMENT_REPOS")
-GITHUB_TOKEN = os.environ.get("API_TOKEN")
 
-if not API_URL:
+GITHUB_TOKEN = os.environ.get("API_TOKEN")
+API_URL = os.environ.get("DOCUMENT_REPOS")
+
+if not GITHUB_TOKEN:
     raise ValueError("DOCUMENT_REPOS is not set.")
 
 
