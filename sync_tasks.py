@@ -2,8 +2,8 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # .envファイルを読み込む
-
+# .envファイルを読み込む
+load_dotenv()
 
 # GitHub API URL
 API_URL = os.getenv("GITHUB_DOCUMENT_REPOS")
@@ -32,7 +32,7 @@ for task in tasks:
     if task.strip() not in existing_issues:
         data = {
             "title": task.strip(),
-            "body": "Task from tasks.md",
+            "body": "Task from task.md",
             "state": "open"
         }
         response = requests.post(API_URL, json=data, headers=headers)
