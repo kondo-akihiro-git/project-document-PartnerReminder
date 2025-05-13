@@ -25,4 +25,4 @@ jobs:
         run: |
           python sync_tasks.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
