@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # GitHub API URL
-API_URL = os.getenv("GITHUB_DOCUMENT_REPOS")
+API_URL = os.getenv("DOCUMENT_REPOS")
 
 # GitHubトークン
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+GITHUB_TOKEN = os.getenv('API_TOKEN')
 
 # GitHub APIヘッダー
 headers = {
