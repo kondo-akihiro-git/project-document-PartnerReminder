@@ -3,7 +3,7 @@ name: Task Sync
 on:
   push:
     paths:
-      - 'task.md'  # タスクファイルが変更された場合にトリガー
+      - 'tasks/task.md'  # タスクファイルが変更された場合にトリガー
 
 jobs:
   sync-tasks:

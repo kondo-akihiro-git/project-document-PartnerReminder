@@ -17,7 +17,7 @@ headers = {
 }
 
 # タスクファイル読み込み
-with open('task.md', 'r') as file:
+with open('tasks/task.md', 'r') as file:
     task_lines = file.readlines()
 
 # タスクをIDでマッピング
