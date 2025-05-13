@@ -1,21 +1,25 @@
 import requests
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# # .envファイルを読み込む
+# .envファイルを読み込む
 # load_dotenv()
 
+# GitHub API URL
+API_URL = os.getenv("DOCUMENT_REPOS")
+
+# GitHubトークン
+GITHUB_TOKEN = os.getenv('API_TOKEN')
+
 # # GitHub API URL
-# API_URL = os.getenv("DOCUMENT_REPOS")
+# API_URL = os.getenv("DOCUMENT_REPOS")  # ← load_dotenv() を使わずに直接読む
 
 # # GitHubトークン
 # GITHUB_TOKEN = os.getenv('API_TOKEN')
 
-# GitHub API URL
-API_URL = os.getenv("DOCUMENT_REPOS")  # ← load_dotenv() を使わずに直接読む
+if not API_URL:
+    raise ValueError("DOCUMENT_REPOS is not set.")
 
-# GitHubトークン
-GITHUB_TOKEN = os.getenv('API_TOKEN')
 
 # GitHub APIヘッダー
 headers = {
