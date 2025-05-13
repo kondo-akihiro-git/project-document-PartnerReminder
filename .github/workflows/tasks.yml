@@ -25,5 +25,5 @@ jobs:
         run: |
           python sync_tasks.py
         env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
-          GITHUB_DOCUMENT_REPOS: ${{ secrets.DOCUMENT_REPOS }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+          DOCUMENT_REPOS: ${{ secrets.DOCUMENT_REPOS }}
