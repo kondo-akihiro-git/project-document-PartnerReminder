@@ -1,0 +1,28 @@
+name: Task Sync
+
+on:
+  push:
+    paths:
+      - 'tasks.md'  # タスクファイルが変更された場合にトリガー
+
+jobs:
+  sync-tasks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Sync Tasks with GitHub Issues
+        run: |
+          python sync_tasks.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
