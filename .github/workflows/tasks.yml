@@ -22,8 +22,9 @@ jobs:
           pip install requests python-dotenv
 
       - name: Sync Tasks with GitHub Issues
-        run: |
-          python sync_tasks.py
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
           DOCUMENT_REPOS: ${{ secrets.DOCUMENT_REPOS }}
+        run: |
+          python sync_tasks.py
+
