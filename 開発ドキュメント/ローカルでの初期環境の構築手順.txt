@@ -64,3 +64,8 @@ SELECT * FROM test_table;
 
 
 \! clear
+
+
+
+
+psql -U myuser -d mydb;
