@@ -69,3 +69,12 @@ SELECT * FROM test_table;
 
 
 psql -U myuser -d mydb;
+
+---
+
+
+brew install mailpit
+
+brew services start mailpit
+
+http://localhost:8025/
