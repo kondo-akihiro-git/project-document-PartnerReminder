@@ -1,0 +1,43 @@
+- backend/
+  - api/
+    - routes/
+      - main.py             # FastAPIのルーティング設定
+    - test/
+      - create_meeting.http  # Meeting作成APIのテスト
+      - user_login.http      # ログインAPIのテストなど
+  - database/
+    - connection.py          # DB接続設定
+    - operation/
+      - meeting/
+        - create_meeting_data.py      # Meeting作成処理
+        - delete_meetings_by_ids.py   # Meeting削除処理
+        - get_meetings.py             # Meeting取得処理
+        - update_meeting_data.py      # Meeting更新処理
+      - user/
+        - authenticate_user.py        # ユーザー認証
+        - create_user.py              # ユーザー作成
+        - get_user_by_id.py           # ユーザー情報取得
+        - update_user_info.py         # ユーザー情報更新
+        - create_jwt_token.py         # JWT生成
+        - decode_jwt_token.py         # JWT検証
+        - get_next_event_day.py       # ユーザーの次の予定取得
+        - update_next_event_day.py    # 次の予定の更新
+        - user_exists.py              # ユーザー存在確認
+    - sql/
+      - create_sql/
+        - create_testdata_v1.sql  # テストデータ用のテーブル作成
+      - insert_sql/
+        - insert_testdata_v1.sql  # テストデータ挿入
+      - select_sql/
+        - select_testdata_v1.sql  # テスト用SELECT文
+      - insert_test_data.py       # SQL実行スクリプト
+  - files/
+    - list_images.py              # 画像一覧取得スクリプト
+    - test_bg_images/             # 背景用テスト画像
+    - test_outer_images/          # 外部用テスト画像
+    - uploaded_images/            # アップロード済み画像
+  - .env                          # 環境変数設定ファイル
+  - .gitignore                    # Gitで無視するファイルの設定
+  - README.md                     # プロジェクト概要
+  - requirements.txt              # Python依存パッケージ
+  - test.py                       # 動作確認用スクリプトなど
