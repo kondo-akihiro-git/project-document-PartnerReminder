@@ -40,23 +40,5 @@ psql -U myuser -d mydb
 
 ### 8. テーブル作成とデータ挿入
 ```sql
-CREATE TABLE test_table (
-  id SERIAL PRIMARY KEY,
-  test_title TEXT NOT NULL,
-  test_note TEXT
-);
-
-INSERT INTO test_table (test_title, test_note) VALUES ('初デート', '楽しかった');
-
-SELECT * FROM test_table;
-```
-
-### 9. 画面クリア（任意）
-```bash
-\! clear
-```
-
-### 10. DB接続コマンド例
-```bash
-psql -U myuser -d mydb
+CREATE TABLE ...
 ```
