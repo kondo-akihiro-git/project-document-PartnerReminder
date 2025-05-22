@@ -14,7 +14,6 @@ DB_PASSWORD=2000Akihiro!
 DB_HOST=aws-0-ap-northeast-1.pooler.supabase.com
 DB_PORT=6543
 
-
 3. フロント/ローカル、API本番でのログ確認
 
 <1回目：Cookie設定までできていることを確認できた>
@@ -37,3 +36,45 @@ INFO:root:get_current_user 呼び出し開始
 INFO:root:Cookie access_token: None
 WARNING:root:未認証: Cookie access_token が存在しません
 INFO:     118.153.243.253:0 - "GET /me HTTP/1.1" 401 Unauthorized
+
+4. 以下の内容実施後、エラー解決
+
+- mainでのCookie送信時のsecureのtrue化
+- samesite="none"への変更
+- .envにおけるフロントのURLのCORS設定の修正
+
+```python
+response.set_cookie(
+    key="access_token",
+    value=token,
+    httponly=True,
+    max_age=3600,
+    samesite="none",
+    path="/",
+    secure=secure_cookie,
+)
+```
+以下、成功ログ
+
+INFO:root:ユーザー認証開始: email=3149akihiro@gmail.com
+INFO:root:ユーザー見つかりました: user_id=8
+INFO:root:パスワード一致
+INFO:root:ユーザー認証成功: user_id=8, secure_cookie=True
+INFO:root:JWT Payload: {'user_id': 8, 'exp': datetime.datetime(2025, 5, 22, 10, 11, 35, 691385)}
+INFO:root:JWTトークン生成: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE3NDc5MDg2OTV9.y9qdrSTkAxE9uv9M3al0dVmtWDugcTIXuTjxpKSYcWE
+INFO:root:Cookie設定完了
+INFO:     118.153.243.253:0 - "POST /login HTTP/1.1" 200 OK
+INFO:root:get_current_user 呼び出し開始
+INFO:root:Cookie access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE3NDc5MDg2OTV9.y9qdrSTkAxE9uv9M3al0dVmtWDugcTIXuTjxpKSYcWE
+INFO:root:JWTデコード結果: {'user_id': 8, 'exp': 1747908695}
+INFO:root:ユーザー取得成功: {'id': 8, 'name': 'テスト', 'phone': '12345678', 'email': '3149akihiro@gmail.com'}
+INFO:root:/me エンドポイント呼び出し: user={'id': 8, 'name': 'テスト', 'phone': '12345678', 'email': '3149akihiro@gmail.com'}
+INFO:     118.153.243.253:0 - "GET /me HTTP/1.1" 200 OK
+INFO:root:get_current_user 呼び出し開始
+INFO:root:Cookie access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE3NDc5MDg2OTV9.y9qdrSTkAxE9uv9M3al0dVmtWDugcTIXuTjxpKSYcWE
+INFO:root:JWTデコード結果: {'user_id': 8, 'exp': 1747908695}
+INFO:     118.153.243.253:0 - "GET /next HTTP/1.1" 404 Not Found
+INFO:root:ユーザー取得成功: {'id': 8, 'name': 'テスト', 'phone': '12345678', 'email': '3149akihiro@gmail.com'}
+INFO:root:/me エンドポイント呼び出し: user={'id': 8, 'name': 'テスト', 'phone': '12345678', 'email': '3149akihiro@gmail.com'}
+INFO:     118.153.243.253:0 - "GET /me HTTP/1.1" 200 OK
+INFO:     118.153.243.253:0 - "GET /meetings HTTP/1.1" 200 OK
