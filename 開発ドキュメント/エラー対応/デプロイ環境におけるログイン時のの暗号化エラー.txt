@@ -1,0 +1,39 @@
+1. フロント/ローカル、APIローカル環境での以下DB接続状況における登録OK ログインOK 認証OK
+
+DB_NAME=mydb
+DB_USER=myuser
+DB_PASSWORD=mypassword
+DB_HOST=localhost
+DB_PORT=5432
+
+2. フロント/ローカル、API本番での以下DB接続状況における登録OK ログインOK 認証×
+
+DB_NAME=postgres
+DB_USER=postgres.deedzsdxntrkciyhcjau
+DB_PASSWORD=2000Akihiro!
+DB_HOST=aws-0-ap-northeast-1.pooler.supabase.com
+DB_PORT=6543
+
+
+3. フロント/ローカル、API本番でのログ確認
+
+<1回目：Cookie設定までできていることを確認できた>
+INFO:     118.153.243.253:0 - "POST /register HTTP/1.1" 200 OK
+INFO:     118.153.243.253:0 - "OPTIONS /login HTTP/1.1" 200 OK
+INFO:root:ログイン試行: email=3149akihiro@gmail.com, password=test
+INFO:root:ユーザー認証開始: email=3149akihiro@gmail.com
+INFO:root:ユーザー見つかりました: user_id=8
+INFO:root:パスワード一致
+INFO:root:ユーザー認証成功: user_id=8, secure_cookie=False
+INFO:root:JWT Payload: {'user_id': 8, 'exp': datetime.datetime(2025, 5, 22, 8, 55, 54, 790285)}
+INFO:root:JWTトークン生成: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE3NDc5MDQxNTR9.1Jkig9hlau48Zi47prI0K5Pvo8CbXarAabVtPs_b5ik
+INFO:root:Cookie設定完了
+INFO:     118.153.243.253:0 - "POST /login HTTP/1.1" 200 OK
+INFO:root:get_current_user 呼び出し開始
+INFO:root:Cookie access_token: None
+WARNING:root:未認証: Cookie access_token が存在しません
+INFO:     118.153.243.253:0 - "GET /me HTTP/1.1" 401 Unauthorized
+INFO:root:get_current_user 呼び出し開始
+INFO:root:Cookie access_token: None
+WARNING:root:未認証: Cookie access_token が存在しません
+INFO:     118.153.243.253:0 - "GET /me HTTP/1.1" 401 Unauthorized
