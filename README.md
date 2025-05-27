@@ -42,12 +42,12 @@ https://project-react-partner-reminder.vercel.app/
 
 | サーバ名（例）                         | サービス名                              | 用途                                  | URL                                      |
 |---------------------------------------|-----------------------------------------|--------------------------------------|-------------------------------------------|
-| **フロントエンドサーバ**              | **Vercel**                              | フロントエンドのホスティング             | https://vercel.com                        |
-| **バックエンドサーバ**                | **Render**                              | バックエンド(API/Batch)のホスティング   | https://render.com                        |
-| **バッチジョブサーバ**                | **Cron-job.org**                        | 定期実行ジョブ管理                      | https://cron-job.org                      |
-| **データベースサーバ**                | **Supabase**                            | DB管理                                  | https://supabase.com                      |
+| **フロントエンド**              | **Vercel**                              | フロントエンドのホスティング             | https://vercel.com                        |
+| **バックエンド**                | **Render**                              | バックエンド(API/Batch)のホスティング   | https://render.com                        |
+| **バッチジョブ**                | **Cron-job.org**                        | 定期実行ジョブ管理                      | https://cron-job.org                      |
+| **データベース**                | **Supabase**                            | DB管理                                  | https://supabase.com                      |
 | **画像保存サーバ**                    | **Cloudinary**                          | 画像の保存と取得                        | https://cloudinary.com                    |
-| **SMTPサーバ**                  | **Brevo（旧Sendinblue）**              | メール送信・SMTPサービス                | https://www.brevo.com                     |
+| **SMTPサーバ**                  | **Brevo**              | メール送信・SMTPサービス                | https://www.brevo.com                     |
 | **メール受信確認サーバ**              | **Mailpit**                             | 開発用メール受信確認                    | https://mailpit.axllent.org/              |
 
 
