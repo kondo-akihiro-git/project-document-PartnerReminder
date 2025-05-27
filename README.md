@@ -2,6 +2,9 @@
 
 **PartnerReminder** は、彼女と会話した内容や彼女の好きなところ、お互いの服装や次回までにやっておくべきことなどを覚えておくことができるアプリです。
 
+<kbd><img style="border: solid;" height="300" alt="スクリーンショット 2025-05-23 21 09 24（2）" src="https://github.com/user-attachments/assets/da3ec893-a096-4da4-967c-04c5a1680197" /></kbd>  
+</br></br>
+
 ## 特徴
 
 - 会話した内容やお互いの服装などをデート情報として管理できる。
