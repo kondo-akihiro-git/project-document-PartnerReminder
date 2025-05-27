@@ -13,9 +13,9 @@
 https://project-react-partner-reminder.vercel.app/
 ```
 
-## 主な画面
+## 画面
 
-<a href="https://github.com/kondo-akihiro-git/project-document-PartnerReminder/tree/main/%E7%94%BB%E9%9D%A2">画面一覧ページ</a>
+<a href="https://github.com/kondo-akihiro-git/project-document-PartnerReminder/tree/main/%E7%94%BB%E9%9D%A2">主な画面ページ</a>
 
 ## 主な機能
 
